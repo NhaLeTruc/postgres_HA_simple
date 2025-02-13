@@ -30,10 +30,15 @@ supervisord.conf file is its config file used in controlling predefined processe
 
 This is the meat of autobase. Ansible and Yml files for configuration and provisioning of Postgres HA cluster on local host. The server cluster is used as infrastructure where dockernized nodes will run as services for Postgres HA database cluster.
 
-Nodes for consul; HAProxy; etcd; patroni.
+Nodes for consul; HAProxy; etcd; and patroni Postgres template.
 
-This direcory holds Dockerfile defining image use for each node in Postgres HA which is all equal since they could be voted in as cluster leader at any point. Thus there also ansible scripts (.yml) for various tasks of both worker and leader node.
+This direcory holds Dockerfile defining image use for each node in Postgres HA which is created equal since they could be voted in as cluster leader at any point. Thus there also ansible scripts (.yml) for various tasks of both worker and leader node.
+
+There is also several opensource project utilized in configurating:
+
+- [ansible-role-docker](https://github.com/geerlingguy/ansible-role-docker)
 
 ### automation\Dockerfile
 
 Base docker image for other infrastructure node containers to build on.
+
