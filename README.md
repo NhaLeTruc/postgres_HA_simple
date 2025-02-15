@@ -42,3 +42,18 @@ There is also several opensource project utilized in configurating:
 
 Base docker image for other infrastructure node containers to build on.
 
+### automation\yml files
+
+Ansible playbooks which handle various cluster management tasks in patroni server template.
+
+### automation\entrypoint.sh
+
+Bash script for setting up ssh access for Ansible in patroni server template.
+
+### automation\inventory
+
+**IMPORTANT** file for configurating basic cluster attributes. IPs of different server types depend on cluster design.
+
+### automation\vars
+
+contain yml files for configuring using Ansible.
