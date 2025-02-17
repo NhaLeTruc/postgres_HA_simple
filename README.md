@@ -54,6 +54,22 @@ Bash script for setting up ssh access for Ansible in patroni server template.
 
 **IMPORTANT** file for configurating basic cluster attributes. IPs of different server types depend on cluster design.
 
-### automation\vars
+### automation\vars & group_vars
 
-contain yml files for configuring using Ansible.
+Contain yml files for configuring using Ansible.
+
+### automation\plugins\callback\json_log.py
+
+Custom build python module utilizing ansible ansible.plugins.callback's CallbackBase class to handle ansible playbook log. Log files are created and stored in specified directory in this script.
+
+### automation\files
+
+Directory for misc files. Contain requirments.txt for node setup.
+
+### automation\molecule
+
+Molecule is an external project which expands Ansible functionality for many coordinated tasks, one main usage is testing.
+
+### automation\roles
+
+Prepackaged Ansible codes for various definitions; tasks; and playbooks.
