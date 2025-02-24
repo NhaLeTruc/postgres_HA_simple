@@ -5,3 +5,8 @@
 __pycache__/
 *.log
 molecule/**/tmp
+
+.terraform
+.terraform.lock.hcl  
+terraform.tfstate*
+terraform.tfvars
