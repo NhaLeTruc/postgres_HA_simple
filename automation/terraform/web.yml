@@ -1,0 +1,28 @@
+---
+- hosts: web
+  become: true
+
+  tasks:
+  - name: Install Apache
+    ansible.builtin.yum:
+      name: httpd
+
+  - name: Install php
+    ansible.builtin.yum:
+      name: php
+
+  - name: Install php-mysqlnd
+    ansible.builtin.yum:
+      name: php-mysqlnd
+
+  - name: Set httpd_can_network_connect_db SELinux boolean
+    ansible.builtin.seboolean:
+      name: httpd_can_network_connect_db
+      state: yes
+      persistent: yes
+
+  - name: Make sure Apache is running and enabled
+    ansible.builtin.systemd:
+      name: httpd
+      state: started
+      enabled: yes
