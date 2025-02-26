@@ -1,7 +1,7 @@
 resource "proxmox_vm_qemu" "proxmox_vm_master" {
-  count = var.num_k3s_masters
-  name  = "k3s-master-${count.index}"
-  desc  = "K3S Master Node"
+  count = var.master_count
+  name  = "cluster-master-${count.index}"
+  desc  = "Cluster Master Node"
   ipconfig0   = "gw=${var.k3s_gateway},ip=${var.k3s_master_ip_addresses[count.index]}"
   target_node = var.k3s_master_pve_node[count.index]
   onboot      = true
@@ -57,7 +57,7 @@ resource "proxmox_vm_qemu" "proxmox_vm_master" {
 }
 
 resource "proxmox_vm_qemu" "proxmox_vm_workers" {
-  count = var.num_k3s_nodes
+  count = var.worker_count
   name  = "k3s-worker-${count.index}"
   ipconfig0   = "gw=${var.k3s_gateway},ip=${var.k3s_worker_ip_addresses[count.index]}"
   target_node = var.k3s_worker_pve_node[count.index]
