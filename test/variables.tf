@@ -11,7 +11,12 @@ variable "proxmox_api_token_secret" {
   sensitive = true
 }
 
-variable "vm_count" {
+variable "master_count" {
+  type = number
+  default = 1
+}
+
+variable "worker_count" {
   type = number
   default = 2
 }
