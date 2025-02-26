@@ -20,6 +20,15 @@ provider "proxmox" {
 
   # Optional: skip TLS Verification
   pm_tls_insecure = true
-  pm_parallel     = 2
-  pm_timeout      = 1200
+
+  # Optional: loggin
+  pm_log_enable       = false
+  pm_log_file         = "terraform-plugin-proxmox.log"
+  pm_parallel         = 1
+  pm_timeout          = 600
+  pm_log_levels = {
+    _default    = "debug"
+    _capturelog = ""
+  }
+  
 }
