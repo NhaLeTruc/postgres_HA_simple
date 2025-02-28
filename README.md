@@ -14,7 +14,7 @@ For more information on using Goose, see the [Goose documentation](https://githu
 
 ### console\Dockerfile
 
-Main image for Autobase frontend. This script install and setup a simple container for basic control and monitor postgres database cluster. It also shows how much of a cash grab autobase is. Tutorial level app aiming at clueless businesses and developer. It is little more than a wrapper for the basic Patroni; HAProxy; etcd HA cluster specifically coded for postgres.
+Main image for Autobase frontend. This script install and setup a simple container for basic control and monitor postgres database cluster. It is little more than a wrapper for the basic Patroni; HAProxy; etcd HA cluster specifically coded for postgres.
 
 ### [supervisord](https://supervisord.org/)
 
